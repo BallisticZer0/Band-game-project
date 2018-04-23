@@ -1,9 +1,24 @@
 import tkinter as tk
 import random
-    
+  
+
+
+
+  
 
 def Notes():
-    print("yo")
+    print(" ___________________________________")
+    print("|                                   |")
+    print("|--- --- --- --- --- --- --- --- -O-|")
+    print("|                             O     |")
+    print("|--- --- --- --- --- --- -O- --- ---|")
+    print("|                     O             |")
+    print("|--- --- --- --- -O- --- --- --- ---|")
+    print("|             O                     |")
+    print("|--- --- -O- --- --- --- --- --- ---|")
+    print("|     O                             |")
+    print("|-O- --- --- --- --- --- --- --- ---|")
+    print("|___________________________________|\n\n")
 
 root = tk.Tk()
 frame = tk.Frame(root)
