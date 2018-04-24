@@ -3,9 +3,13 @@ import random
 import time
 
 
-
-def cls():
-    print("\n") * 100
+def Clefs():
+    while input("There is two cleffs\n\nA Bass Clef\nor\nTreble Clef.\n\nType what clef you want [Bass|Treble]") == ['Treble','treble','Treble.','treble.']:
+        print(random.choice(Treble_Clef))
+    if input == ['Base','Bass.','bass','bass.']:
+        print(random.choice(Bass_Clef))
+    else:
+        print("Please type Bass or Treble")
 
 def how_to_play():
     print("Type the note in the box that corasponds to the note on the screen.")
@@ -332,18 +336,23 @@ button.pack(side=tk.BOTTOM)
 button = tk.Button(frame,
                    text="Start",
                    fg="green",
-                   command=Treble_Clef)
+                   command=Clefs)
 button.pack(side=tk.BOTTOM)
 root.mainloop()
 
 
-if Answer_Key:
-    time.sleep(0.10)
-    print(cls)
 
-elif command=how_to_play:
-    time.sleep(0.10)
-    cls()
+
+
+
+# if (Answer_Key == True):
+#    time.sleep(0.10)
+#    print(cls)
+#    cls()
+    
+# elif how_to_play:
+#    time.sleep(0.10)
+#    cls()
     
     
 
