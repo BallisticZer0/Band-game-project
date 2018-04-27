@@ -6,11 +6,59 @@ import time
 def Clefs():
     choice = input("Please select a cleff to test: [Bass | Treble]:  ")
     while(choice):  # Should always loop, can fix this later or just use the quit button?
+
+        # We are currently in the case of the Bass:
         if (choice.lower() == 'bass' or choice.lower() == 'bass.'):  # Read about regex they can be really usful for making sure your input is read correctly 
-            print(random.choice(Bass_clef))
+            note,name = random.choice(Bass_clef)     # note is the note to be printed, name is the name of that note
+            print(note)
             answer = input("What is your answer:  ")
-        elif (choice.lower() == '???' or choice.lower() == '???'):  # Read about regex they can be really usful for making sure your input is read correctly 
-            print(random.choice(Treble_clef))
+            
+            # Lets check their answer!!!!
+            #
+
+            if (answer.lower() is name):
+                # What should we say, do if they are right?
+                
+                #########################
+                #  Your code here - ish #
+                #########################
+                pass
+            else:
+                # What should we say do if they are wrong?
+                
+                #########################
+                #  Your code here - ish #
+                #########################
+                pass
+
+        # We are currently in the case of the tremble:
+        elif (choice.lower() == 'tremble' or choice.lower() == 'tremble.'):  # Read about regex they can be really usful for making sure your input is read correctly 
+            
+            # Store the random choice to check the answer:
+            note = random.choice(Treble_clef)
+            print(note)
+
+            # Ask for an answer
+            answer = input("What is your answer:  ")
+
+            # Again lets check and answer here too!!!!!
+            #
+
+            if (answer.lower() is name):
+                # What should we say, do if they are right?
+                
+                #########################
+                #  Your code here - ish #
+                #########################
+                pass
+            else:
+                # What should we say do if they are wrong?
+                
+                #########################
+                #  Your code here - ish #
+                #########################
+                pass
+
         else:
             print("Please type Bass or Treble")
 
@@ -178,7 +226,15 @@ Treble_High_F= "___________________________________\n"  \
       +"|___________________________________|\n\n"
 
 # Put all treble notes into a list
-Treble_clef =[Treble_A,Treble_B,Treble_C,Treble_D,Treble_E,Treble_F,Treble_G,Treble_High_E,Treble_High_F]
+Treble_clef =[(Treble_A,"a"),
+              (Treble_B,"b"),
+              (Treble_C,"c"),
+              (Treble_D,"d"),
+              (Treble_E,"e"),
+              (Treble_F,"f"),
+              (Treble_G,"g"),
+              (Treble_High_E,"high e"),
+              (Treble_High_F,"high f")]
 #print()
 
 
@@ -313,6 +369,15 @@ bass_High_F= "___________________________________\n"  \
 Bass_clef =[bass_A,bass_B,bass_C,bass_D,bass_E,bass_F,bass_G,bass_High_E,bass_High_F]
         
   
+Bass_clef =[(Bass_A,"a"),
+            (Bass_B,"b"),
+            (Bass_C,"c"),
+            (Bass_D,"d"),
+            (Bass_E,"e"),
+            (Bass_F,"f"),
+            (Bass_G,"g"),
+            (Bass_High_E,"high e"),
+            (Bass_High_F,"high f")]
 
   
 
