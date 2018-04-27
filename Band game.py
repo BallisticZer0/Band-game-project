@@ -4,12 +4,51 @@ import time
 
 
 def Clefs():
-    while input("There is two cleffs\n\nA Bass Clef\nor\nTreble Clef.\n\nType what clef you want [Bass|Treble]") == ['Treble','treble','Treble.','treble.']:
-        print(random.choice(Treble_Clef))
-    if input == ['Base','Bass.','bass','bass.']:
-        print(random.choice(Bass_Clef))
-    else:
-        print("Please type Bass or Treble")
+    choice = input("Please select a cleff to test: [Bass | Treble]:  ")
+    while(choice):  # Should always loop, can fix this later or just use the quit button?
+
+        # We are currently in the case of the Bass:
+        if (choice.lower() == 'bass' or choice.lower() == 'bass.'):  # Read about regex they can be really usful for making sure your input is read correctly 
+            note,name = random.choice(Bass_clef)     # note is the note to be printed, name is the name of that note
+            print(note)
+            answer = input("What is your answer:  ")
+            
+            # Lets check their answer!!!!
+            #
+
+            if (answer.lower() is name):
+                print("Correct now try another one")
+               
+                
+            else:
+                print("Sorry not right.")
+            
+
+        # We are currently in the case of the tremble:
+        elif (choice.lower() == 'treble' or choice.lower() == 'treble.'):  # Read about regex they can be really usful for making sure your input is read correctly 
+            
+            # Store the random choice to check the answer:
+            note = random.choice(Treble_clef)
+            print(note)
+
+            # Ask for an answer
+            answer = input("What is your answer:  ")
+
+            # Again lets check and answer here too!!!!!
+            #
+
+            if (answer.lower() is name):
+                print("Correct now try another one")
+               
+                
+            else:
+                print("Sorry not right.")
+            
+                   
+         
+
+        else:
+            print("Please type Bass or Treble")
 
 def how_to_play():
     print("Type the note in the box that corasponds to the note on the screen.")
@@ -50,11 +89,9 @@ def Answer_Key():
     
 
 
-    
+# Define the treble notes:
 
-def Treble_Clef():
-
-    E  =  "  ___________________________________\n"  \
+bass_E  =  " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -67,8 +104,7 @@ def Treble_Clef():
           +"|-O- --- --- --- --- --- --- --- ---|\n" \
           +"|___________________________________|\n\n"
 
-
-    F  =  "  ___________________________________\n"  \
+bass_F  =  " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -82,7 +118,7 @@ def Treble_Clef():
           +"|___________________________________|\n\n"
 
 
-    G  =  "  ___________________________________\n"  \
+bass_G  =  " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -96,7 +132,7 @@ def Treble_Clef():
           +"|___________________________________|\n\n"
 
 
-    A  =  "  ___________________________________\n"  \
+bass_A  =  " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -109,7 +145,7 @@ def Treble_Clef():
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|___________________________________|\n\n"
 
-    B  =  "  ___________________________________\n"  \
+bass_B  =  " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -122,7 +158,7 @@ def Treble_Clef():
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|___________________________________|\n\n"
 
-    C  =  "  ___________________________________\n"  \
+bass_C  =  " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -136,7 +172,7 @@ def Treble_Clef():
           +"|___________________________________|\n\n"
 
 
-    D  =  "  ___________________________________\n"  \
+bass_D  =  " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -149,8 +185,8 @@ def Treble_Clef():
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|___________________________________|\n\n"
 
-        
-    High_E= "___________________________________\n"  \
+    
+bass_High_E="___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                             O     |\n" \
@@ -164,7 +200,7 @@ def Treble_Clef():
           +"|___________________________________|\n\n"
 
 
-    High_F= "___________________________________\n"  \
+bass_High_F="___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- -O-|\n" \
           +"|                                   |\n" \
@@ -177,13 +213,18 @@ def Treble_Clef():
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|___________________________________|\n\n"
 
-print()
+# Now putting all of these into one list to be easily accessed
+Bass_clef =[(bass_A,"a"),
+            (bass_B,"b"),
+            (bass_C,"c"),
+            (bass_D,"d"),
+            (bass_E,"e"),
+            (bass_F,"f"),
+            (bass_G,"g"),
+            (bass_High_E,"high e"),
+            (bass_High_F,"high f")]
 
-
-
-def Bass_Clef():
-
-    E  =  "  ___________________________________\n"  \
+Treble_E = " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -197,7 +238,7 @@ def Bass_Clef():
           +"|___________________________________|\n\n"
 
 
-    F  =  "  ___________________________________\n"  \
+Treble_F = " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -211,7 +252,7 @@ def Bass_Clef():
           +"|___________________________________|\n\n"
 
 
-    G  =  "  ___________________________________\n"  \
+Treble_G = " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -225,7 +266,7 @@ def Bass_Clef():
           +"|___________________________________|\n\n"
 
 
-    A  =  "  ___________________________________\n"  \
+Treble_A = " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -238,7 +279,7 @@ def Bass_Clef():
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|___________________________________|\n\n"
 
-    B  =  "  ___________________________________\n"  \
+Treble_B = " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -251,7 +292,7 @@ def Bass_Clef():
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|___________________________________|\n\n"
 
-    C  =  "  ___________________________________\n"  \
+Treble_C = " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -265,7 +306,7 @@ def Bass_Clef():
           +"|___________________________________|\n\n"
 
 
-    D  =  "  ___________________________________\n"  \
+Treble_D = " ___________________________________\n"  \
           +"|                                   |\n" \
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|                                   |\n" \
@@ -278,66 +319,86 @@ def Bass_Clef():
           +"|--- --- --- --- --- --- --- --- ---|\n" \
           +"|___________________________________|\n\n"
 
-        
-    High_E= "___________________________________\n"  \
-          +"|                                   |\n" \
-          +"|--- --- --- --- --- --- --- --- ---|\n" \
-          +"|                             O     |\n" \
-          +"|--- --- --- --- --- --- --- --- ---|\n" \
-          +"|                                   |\n" \
-          +"|--- --- --- --- --- --- --- --- ---|\n" \
-          +"|                                   |\n" \
-          +"|--- --- --- --- --- --- --- --- ---|\n" \
-          +"|                                   |\n" \
-          +"|--- --- --- --- --- --- --- --- ---|\n" \
-          +"|___________________________________|\n\n"
-
-
-    High_F= "___________________________________\n"  \
-          +"|                                   |\n" \
-          +"|--- --- --- --- --- --- --- --- -O-|\n" \
-          +"|                                   |\n" \
-          +"|--- --- --- --- --- --- --- --- ---|\n" \
-          +"|                                   |\n" \
-          +"|--- --- --- --- --- --- --- --- ---|\n" \
-          +"|                                   |\n" \
-          +"|--- --- --- --- --- --- --- --- ---|\n" \
-          +"|                                   |\n" \
-          +"|--- --- --- --- --- --- --- --- ---|\n" \
-          +"|___________________________________|\n\n"
-
-        
-      
     
-   
- 
+Treble_High_E= " ___________________________________\n"  \
+              +"|                                   |\n" \
+              +"|--- --- --- --- --- --- --- --- ---|\n" \
+              +"|                             O     |\n" \
+              +"|--- --- --- --- --- --- --- --- ---|\n" \
+              +"|                                   |\n" \
+              +"|--- --- --- --- --- --- --- --- ---|\n" \
+              +"|                                   |\n" \
+              +"|--- --- --- --- --- --- --- --- ---|\n" \
+              +"|                                   |\n" \
+              +"|--- --- --- --- --- --- --- --- ---|\n" \
+              +"|___________________________________|\n\n"
 
-   
 
+Treble_High_F= " ___________________________________\n"  \
+              +"|                                   |\n" \
+              +"|--- --- --- --- --- --- --- --- -O-|\n" \
+              +"|                                   |\n" \
+              +"|--- --- --- --- --- --- --- --- ---|\n" \
+              +"|                                   |\n" \
+              +"|--- --- --- --- --- --- --- --- ---|\n" \
+              +"|                                   |\n" \
+              +"|--- --- --- --- --- --- --- --- ---|\n" \
+              +"|                                   |\n" \
+              +"|--- --- --- --- --- --- --- --- ---|\n" \
+              +"|___________________________________|\n\n"
+
+# Put all treble notes into a list
+Treble_clef =[(Treble_A,"a"),
+              (Treble_B,"b"),
+              (Treble_C,"c"),
+              (Treble_D,"d"),
+              (Treble_E,"e"),
+              (Treble_F,"f"),
+              (Treble_G,"g"),
+              (Treble_High_E,"high e"),
+              (Treble_High_F,"high f")]
+
+
+        
+  
+
+
+  
+
+# Now to add puttins:
 root = tk.Tk()
 frame = tk.Frame(root)
 frame.pack()
 
+# Auit button
 button = tk.Button(frame, 
                    text="QUIT", 
                    fg="red",
                    command=quit)
 button.pack(side=tk.BOTTOM)
+
+# Clef button
 button = tk.Button(frame,
                    text="Clef",
                    fg="black",
                    command=Answer_Key)
 button.pack(side=tk.BOTTOM)
+
+# How to Play 
 button = tk.Button(frame,
                    text="How to play",
                    fg="brown",
                    command=how_to_play)
 button.pack(side=tk.BOTTOM)
+
+# Start
 button = tk.Button(frame,
                    text="Start",
                    fg="green",
                    command=Clefs)
 button.pack(side=tk.BOTTOM)
+
+# Loop to keep the buttons on screen
 root.mainloop()
 
 
@@ -355,7 +416,5 @@ root.mainloop()
 #    cls()
     
     
-
-
 
 
