@@ -33,7 +33,7 @@ def Clefs():
         elif (choice.lower() == 'treble' or choice.lower() == 'treble.'):  # Read about regex they can be really usful for making sure your input is read correctly 
             
             # Store the random choice to check the answer:
-            note = random.choice(Treble_clef)
+            note,name = random.choice(Treble_clef)           # Needed note,name here
             print(note)
 
             # Ask for an answer
@@ -65,7 +65,7 @@ def how_to_play():
     
 
 def Answer_Key():
-    print(".")
+    print("\n")
     print(" ___________________________________")
     print("|                                  F|")
     print("|--- --- --- --- --- --- --- --- -O-|")
@@ -81,7 +81,7 @@ def Answer_Key():
     print("             Treble Clef")
 
 
-    print(".")
+    print("\n")
     print(" ___________________________________")
     print("|                                  F|")
     print("|--- --- --- --- --- --- --- --- -A-|")
