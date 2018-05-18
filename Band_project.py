@@ -3,6 +3,20 @@ import random
 import time
 
 
+def START():
+    while input('Type what you want to know/do.\nHow to play..OR..Clefs..OR..Play         :') == ['Play','play','start','Start']:
+        Clefs()
+        
+    if input == ['clefs', 'Clefs']:
+        Answer_Key()
+
+    elif input == ['How to play','how to play']:
+        how_to_play()
+
+    else:
+        print("Please type one of the options.")
+
+
 def Clefs():
     choice = input("Please select a cleff to test: [Bass | Treble]:")
     while(choice):  # Should always loop, can fix this later or just use the quit button?
@@ -371,18 +385,12 @@ Treble_clef =[(Treble_A,"a"),
 
         
   
-while input('Type what you want to know/do.\nHow to play\nClefs\nPlay') == ['How to play','how to play']:
-    how_to_play()
+while input("Do you want to play a game[y|n]") == 'y':
+    START()
 
-    if input == ['clefs', 'Clefs']:
-        Answer_Key()
 
-    elif input == ['Play','play','start','Start']:
-        Clefs()
-
-    else:
-        print("Please type one of the options.")
-
+else:
+    print("type y or n")
   
 
 # Now to add puttins:
